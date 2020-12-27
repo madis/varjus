@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+npm install
+cd server-release && npm install
+npx shadow-cljs release ui
+npx shadow-cljs release server

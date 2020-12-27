@@ -4,14 +4,25 @@
  :dev-http {8000 "public"}
 
  :dependencies
- [[cider/cider-nrepl "0.25.5"]]
+ [[cider/cider-nrepl "0.25.5"]
+  [mount "0.1.16"]
+  [com.taoensso/timbre "4.10.0"]]
 
  :builds
- {:dev-ui
+ {:ui
   {:target :browser
    :output-dir "public/js"
    :asset-path "js"
    :modules {:main {:init-fn varjus.ui.core/init :entries [varjus.ui.core]}}
    :optimizations :none
    :source-map true
-   :source-map-timestamp true}}}
+   :source-map-timestamp true}
+  :server
+  {:target :node-script
+   :output-dir "server-release"
+   :output-to "server-release/server.js"
+   :main varjus.server.core/-main
+   :optimizations :none
+   :source-map true
+   :source-map-timestamp true}}
+ }

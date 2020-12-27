@@ -1,0 +1,7 @@
+#!/bin/sh
+echo "We know we've added correct build packs. So lets override the Heroku detection"
+#
+# $ heroku buildpacks:clear
+# $ heroku buildpacks:add heroku/nodejs
+# $ heroku buildpacks:add heroku/clojure
+exit 0
